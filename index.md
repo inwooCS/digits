@@ -69,7 +69,7 @@ Click login and then Sign in.
 
 <img src="doc/signin.png" alt="signin">
 
-###Home Page
+## Home Page
 After successfully logging in, the system brings you to the homepage. 
 
 <img src="doc/homepage.png" alt="homepage">
