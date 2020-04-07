@@ -7,6 +7,12 @@ import AddNote from '../components/AddNote';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Contact extends React.Component {
+
+  removeItem(docID) {
+    console.log(`item to delete is: ${docID}`);
+    this.props.Contacts.remove(docID);
+  }
+
   render() {
     return (
         <Card centered>
@@ -33,6 +39,9 @@ class Contact extends React.Component {
           <Card.Content extra>
             <AddNote owner={this.props.contact.owner} contactId={this.props.contact._id}/>
           </Card.Content>
+          <Card.Content extra>
+            <button className="ui button" onClick={() => this.removeItem(this.props.contact._id)}>Delete</button>
+          </Card.Content>
         </Card>
     );
   }
@@ -42,6 +51,7 @@ class Contact extends React.Component {
 Contact.propTypes = {
   contact: PropTypes.object.isRequired,
   notes: PropTypes.array.isRequired,
+  Contacts: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
