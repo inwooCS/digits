@@ -53,18 +53,18 @@ W20180305-18:06:02.806(-10)? (STDERR)
 W20180305-18:06:02.806(-10)? (STDERR) in the root directory of your application.
 ```
 
-## Walkthrough 
-###Landing Page
+# Walkthrough 
+## Landing Page
 The landing page introduces you to Digits.
 
 <img src="doc/landing.png" alt="landing">
 
-###Register 
+## Register 
 Click login and then Sign Up. 
 
 <img src="doc/signup.png" alt="signup">
 
-###Sign In
+## Sign In
 Click login and then Sign in. 
 
 <img src="doc/signin.png" alt="signin">
@@ -74,12 +74,12 @@ After successfully logging in, the system brings you to the homepage.
 
 <img src="doc/homepage.png" alt="homepage">
 
-###List Contact
+## List Contact
 List Contact is a tab that shows your contacts.
 
 <img src="doc/listcontact.png" alt="listcontact">
 
-###Edit
+## Edit
 You can edit contacts as admin.
 
 <img src="doc/edit.png" alt="edit">
