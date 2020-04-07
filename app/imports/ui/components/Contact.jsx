@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Feed } from 'semantic-ui-react';
+import { Card, Image, Feed, Confirm } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Note from './Note';
@@ -12,6 +12,14 @@ class Contact extends React.Component {
     console.log(`item to delete is: ${docID}`);
     this.props.Contacts.remove(docID);
   }
+
+  state = { open: false }
+
+  open = () => this.setState({ open: true })
+
+  close = () => this.setState({ open: false })
+
+  delete = () => this.removeItem(this.props.contact._id)
 
   render() {
     return (
@@ -40,10 +48,15 @@ class Contact extends React.Component {
             <AddNote owner={this.props.contact.owner} contactId={this.props.contact._id}/>
           </Card.Content>
           <Card.Content extra>
-            <button className="ui button" onClick={() => this.removeItem(this.props.contact._id)}>Delete</button>
+            <button className="ui button" onClick={this.open}>Delete</button>
+            <Confirm
+                open={this.state.open}
+                onCancel={this.close}
+                onConfirm={this.close && this.delete}
+            />
           </Card.Content>
         </Card>
-    );
+    ); // this.removeItem(this.props.contact._id)
   }
 }
 
